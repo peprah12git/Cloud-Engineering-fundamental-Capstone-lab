@@ -38,13 +38,12 @@ Task 3.Task 3 – Apply the AWS Cloud Adoption Framework (CAF)
 
 Below is an analysis of the organization’s readiness using the six AWS CAF perspectives, including key actions needed for successful migration.
 
-1. Business Perspective (≈170 words)
+1. Business Perspective 
 From a business perspective, the organization is motivated to migrate in order to improve scalability, availability, and long-term cost efficiency. However, current operations rely on traditional on-premises infrastructure, which may indicate limited financial modeling for cloud consumption-based pricing. The organization appears technically driven but may lack a clearly defined cloud business case, including ROI projections, cost forecasting, and defined success metrics such as improved uptime or faster deployment cycles.
 
 To ensure readiness, leadership must define clear migration objectives aligned with business outcomes. Key actions include developing a cloud financial model, identifying measurable KPIs (availability targets, recovery time objectives, performance benchmarks), and creating a phased migration roadmap. Stakeholder alignment is also critical to ensure technical teams and business leaders share common expectations. Establishing executive sponsorship and defining cloud value propositions will help ensure long-term sustainability and strategic alignment with growth objectives.
 
-2. People Perspective (≈165 words)
-
+2. People Perspective 
 The organization likely has experience managing traditional servers but may have limited hands-on expertise with AWS services, DevOps practices, and infrastructure automation. This skills gap represents a readiness challenge, particularly in areas such as IAM, networking, monitoring, and cost optimization in the cloud environment.
 
 To enable successful migration, investment in training and certification is essential. Team members should pursue AWS foundational and associate-level certifications to build competency in architecture, security, and operations. Introducing a Cloud Center of Excellence (CCoE) can help guide best practices and governance standards. Additionally, adopting DevOps culture—encouraging collaboration between development and operations teams—will improve automation and deployment reliability. Clear role definitions for cloud architects, security engineers, and operations staff will further enhance accountability and reduce transition risks
@@ -60,20 +59,18 @@ The current platform is a simple two-tier on-prem architecture with limited scal
 
 Key enablers include designing a Virtual Private Cloud (VPC) with public and private subnets across multiple Availability Zones. Compute resources should be deployed using Auto Scaling groups behind an Elastic Load Balancer. The database should be migrated to Amazon RDS with Multi-AZ enabled for high availability. Infrastructure as Code (IaC), using AWS CloudFormation or Terraform, should be adopted to ensure repeatable and consistent deployments. Incorporating managed services rather than self-managed EC2 instances will reduce operational burden and improve resilience. This platform modernization will align the workload with AWS best practices for reliability and scalability.
 
-5. Security Perspective (≈170 words)
+5. Security Perspective 
 
 Security posture in the current environment appears basic, with simple firewall rules and public exposure risks. There is limited visibility, no centralized logging, and no evidence of layered defense mechanisms. This presents a significant cloud readiness gap.
 
 Before migration, a security baseline must be established. Key actions include implementing IAM with least-privilege policies, enabling multi-factor authentication (MFA), and designing secure VPC segmentation (public subnets for web tier, private subnets for database tier). Encryption should be enforced both in transit (TLS certificates via AWS Certificate Manager) and at rest (RDS encryption, EBS encryption). AWS WAF and security groups should be configured to restrict traffic appropriately. Centralized logging using CloudTrail and CloudWatch should be enabled to support auditing and incident response. Proactively embedding security controls ensures that migration does not replicate on-prem weaknesses in the cloud.
 
-6. Security Perspective (≈170 words)
-
+6. Security Perspective 
 Security posture in the current environment appears basic, with simple firewall rules and public exposure risks. There is limited visibility, no centralized logging, and no evidence of layered defense mechanisms. This presents a significant cloud readiness gap.
 
 Before migration, a security baseline must be established. Key actions include implementing IAM with least-privilege policies, enabling multi-factor authentication (MFA), and designing secure VPC segmentation (public subnets for web tier, private subnets for database tier). Encryption should be enforced both in transit (TLS certificates via AWS Certificate Manager) and at rest (RDS encryption, EBS encryption). AWS WAF and security groups should be configured to restrict traffic appropriately. Centralized logging using CloudTrail and CloudWatch should be enabled to support auditing and incident response. Proactively embedding security controls ensures that migration does not replicate on-prem weaknesses in the cloud.
 
-7. Operations Perspective (≈175 words)
-
+7. Operations Perspective 
 Operationally, the organization relies heavily on manual processes, including deployments, scaling, and troubleshooting. There is limited automation, no centralized monitoring, and no formal incident response procedures. This indicates low operational readiness for cloud environments, which require continuous monitoring and automation-driven management.
 
 To improve readiness, operational processes must be modernized. Implementing Amazon CloudWatch for monitoring and alerting will provide visibility into system health and performance. Automated backup policies and disaster recovery planning should be defined, including Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO). CI/CD pipelines using AWS CodePipeline or similar tools should be introduced to automate application deployments. Infrastructure as Code will further reduce manual errors and configuration drift. Finally, documenting operational runbooks and incident response procedures will enhance resilience and ensure faster recovery from failures.
