@@ -1,4 +1,4 @@
-<h1 align="center">☁️ AWS Multi-Tier Architecture Blueprint ☁️</h1>
+<h1 align="center"> AWS Multi-Tier Architecture Blueprint ☁️</h1>
 
 ## Project Overview
 
