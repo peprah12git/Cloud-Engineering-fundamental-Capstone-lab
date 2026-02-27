@@ -1,3 +1,4 @@
+AWS Multi-Tier Architecture Blueprint
 Project Overview
 
 This project evaluates a two-tier on-premises web application and proposes a modern cloud-native AWS architecture. It follows AWS best practices using the Well-Architected Framework (WAF) and Cloud Adoption Framework (CAF).
