@@ -1,113 +1,67 @@
-# Cloud-Engineering-fundamental-Capstone-lab
- Cloud-Engineering-fundamental-Capstone-lab
+Project Overview
 
-  Project Overview
+This project evaluates a two-tier on-premises web application and proposes a modern cloud-native AWS architecture. It follows AWS best practices using the Well-Architected Framework (WAF) and Cloud Adoption Framework (CAF).
 
-This project documents the design and modeling of a cloud-native AWS architecture using DiagramGPT and draw.io XML generation.
+Task 1 – Existing Architecture
 
-The goal is to define a structured, production-ready AWS architecture while answering key architectural decision questions such as:
+Frontend: Single web server (Apache/Nginx, Node.js/PHP/Java) handling requests and business logic.
 
-Environment strategy (Production, Staging, Development)
+Backend: Relational database (MySQL/PostgreSQL) with local storage, no redundancy.
 
-AWS region selection
+Networking: Single network, public IP, basic firewall.
 
-Compliance considerations
+Risks: Single point of failure, no monitoring, security vulnerabilities, data loss risk, limited scalability, high operational overhead.
 
-Cloud-native vs. hybrid integration
+Task 2 – Well-Architected Evaluation
+Pillar	Strength	Improvement	AWS Services
+Operational	Simple architecture	Automate monitoring & deployments	CloudWatch, CloudTrail, CodePipeline
+Security	Basic firewall	Enforce least privilege, WAF	IAM, Security Groups, WAF
+Reliability	Logical tier separation	Multi-AZ, backups	RDS Multi-AZ, Auto Scaling, ELB
+Performance	Handles low traffic	Dynamic scaling	Auto Scaling, CloudFront
+Cost	No cloud costs	Elastic resources, right-sizing	Cost Explorer, EC2, RDS
+Task 3 – CAF Readiness
 
-Additional AWS services and external integrations
+Business: Define cloud objectives, KPIs, and ROI.
 
-     Architecture Scope
-1.  Environments Represented
+People: Train teams on AWS and DevOps, establish CCoE.
 
-The architecture includes:
+Governance: Enforce policies, IAM, budgets, and compliance.
 
-Production – Main live environment
+Platform: VPC with public/private subnets, Multi-AZ, IaC, managed services.
 
-Staging – Pre-production testing and validation
+Security: IAM least privilege, MFA, encryption, WAF, centralized logging.
 
-Development – Developer testing and feature implementation
+Operations: CloudWatch monitoring, CI/CD, automated backups, runbooks.
 
-Each environment is logically isolated to support secure CI/CD workflows and risk-free deployments.
+Task 4 – Improved Architecture
 
-2️. AWS Region & Compliance Considerations
+Cloud-Native Design:
 
-The architecture design considers:
+Networking: VPC with public/private subnets across multiple AZs
 
-Region selection based on:
+Compute: EC2 Auto Scaling behind ALB
 
-Latency
+Database: Amazon RDS Multi-AZ with backups
 
-Cost
+Security: IAM, WAF, Security Groups, TLS & encryption
 
-Regulatory requirements
+Monitoring: CloudWatch & CloudTrail
 
-Compliance requirements such as:
+DevOps: CI/CD pipelines via CodePipeline, Infrastructure as Code
 
-Data protection standards
+Diagram Concept:
 
-Regional data residency policies
+Users → Route 53 → ALB → Auto Scaling EC2 → RDS Multi-AZ
+Key Outcomes
 
-Industry-specific regulations (if applicable)
+High availability and scalability
 
-The design supports region-aware deployments and can be extended for multi-region high availability.
+Enhanced security and monitoring
 
-3️. Cloud-Native Strategy
+Reduced operational burden
 
-The system is designed as:
+Predictable cost and automated deployments
 
-- Fully Cloud-Native
+AWS Services Used
 
-There is no on-premises integration included in the current architecture. All components are designed to run entirely within AWS.
-
-However, the architecture can be extended in the future to include:
-
-VPN connections
-
-AWS Direct Connect
-
-Hybrid database replication
-
-4️. Additional AWS Services Considered
-
-The architecture optionally supports integration with:
-
-IAM – Identity and access control
-
-CloudWatch – Monitoring and logging
-
-AWS WAF – Web application firewall
-
-CloudTrail – Audit logging
-
-S3 – Static assets and storage
-
-RDS or DynamoDB – Data persistence
-
-Elastic Load Balancer (ELB) – Traffic distribution
-
-Auto Scaling Groups – High availability
-
-VPC with Public/Private Subnets – Network isolation
-
-External integrations (optional):
-
-Third-party authentication providers
-
-Payment gateways
-
-Monitoring tools
-
-🛠 Tools Used
-
-DiagramGPT – For structured architecture generation
-
-draw.io XML – For diagram export and visualization
-
-Markdown – For documentation
-/architecture
-    ├── aws-architecture.drawio.xml
-    ├── architecture-diagram.png
-    
-
-/README.md
+EC2, RDS, ALB, Auto Scaling, VPC, IAM, WAF, CloudWatch, CloudTrail, CodePipeline, CloudFormation/Terraform
