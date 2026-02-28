@@ -76,3 +76,39 @@ Below is an analysis of the organization’s readiness using the six AWS CAF per
     To improve readiness, operational processes must be modernized. Implementing Amazon CloudWatch for monitoring and alerting will provide visibility into system health and performance. Automated backup policies and disaster recovery planning should be defined, including Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO). CI/CD pipelines using AWS CodePipeline or similar tools should be introduced to automate application deployments. Infrastructure as Code will further reduce manual errors and configuration drift. Finally, documenting operational runbooks and incident response procedures will enhance resilience and ensure faster recovery from failures.
 
 Task 4: Design an Improved Architecture
+    Revised AWS Architecture (Descriptive Design)
+
+The improved architecture will adopt a highly available, secure, and scalable multi-tier cloud design.
+Architecture Overview
+
+Amazon VPC spanning two Availability Zones.
+Public Subnets:
+    Application Load Balancer (ALB)
+    Internet Gateway
+Private Subnets:
+    EC2 instances in an Auto Scaling Group (web/application tier)
+    Amazon RDS (Multi-AZ) for database tier
+
+Security Layers:
+    Security Groups (restricted access)
+    AWS WAF protecting ALB
+    IAM roles for least privilege access
+
+Monitoring & Logging:
+    CloudWatch (metrics & alarms)
+    CloudTrail (audit logs)
+
+Backup & DR:
+    RDS automated backups
+    EBS snapshots
+
+Performance Optimization:
+    CloudFront for content caching.
+    
+Cost Optimization:
+    Auto Scaling
+    Reserved Instances for predictable workloads.
+                Final Conclusion
+The improved AWS architecture transforms the original single-point-of-failure system into a resilient, secure, scalable, and cost-optimized cloud-native environment aligned with both:
+AWS Well-Architected Framework (WAF)
+AWS Cloud Adoption Framework (CAF).
